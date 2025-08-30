@@ -1,0 +1,173 @@
+/* ===== Treatment Page Styles ===== */
+
+/* Treatment Hero */
+.treatment-hero {
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                var(--hero-image) no-repeat center center/cover;
+    color: var(--white);
+    margin-top: 80px;
+    position: relative;
+}
+
+#acne-hero {
+    --hero-image: url('../images/acne-treatment-bg.jpg');
+}
+
+#anti-aging-hero {
+    --hero-image: url('../images/anti-aging-bg.jpg');
+}
+
+#laser-hero {
+    --hero-image: url('../images/laser-treatment-bg.jpg');
+}
+
+.treatment-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+.treatment-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Treatment Details */
+.treatment-content {
+    display: flex;
+    gap: 40px;
+    margin: 60px 0;
+}
+
+.treatment-text {
+    flex: 1;
+}
+
+.treatment-image {
+    flex: 1;
+    position: relative;
+}
+
+.image-slider {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: 500px;
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.image-slider img.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Treatment Types Grid */
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.type-card {
+    background: var(--primary-light);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.type-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.type-card h4 {
+    margin-bottom: 10px;
+}
+
+/* FAQ Section */
+.faq-container {
+    margin-top: 60px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    background: var(--primary-light);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-question.active i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 300px;
+}
+
+/* CTA Section */
+.treatment-cta {
+    text-align: center;
+    padding: 80px 0;
+    background: var(--primary-light);
+}
+
+.treatment-cta h2 {
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .treatment-content {
+        flex-direction: column;
+    }
+    
+    .type-grid {
+        grid-template-columns: 1fr;
+    }
+}
